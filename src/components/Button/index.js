@@ -3,6 +3,7 @@ import {
     FancyButton,
     SubmitButton,
     AnimatedLogo,
+    DarkButton,
 } from './Button.styles';
 
-export { StyledButton, FancyButton, SubmitButton, AnimatedLogo };
+export { StyledButton, FancyButton, SubmitButton, AnimatedLogo, DarkButton };
