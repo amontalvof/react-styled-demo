@@ -1,5 +1,5 @@
+import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import logo from './logo.svg';
-import { ThemeProvider } from 'styled-components';
 import './App.css';
 import {
     StyledButton,
@@ -18,11 +18,19 @@ const theme = {
         primary: '#fff',
         text: '#000',
     },
+    fontFamily: 'Gill Sans',
 };
+
+const GlobalStyle = createGlobalStyle`
+    button {
+        font-family: ${(props) => props.theme.fontFamily};
+    }
+`;
 
 function App() {
     return (
         <ThemeProvider theme={theme}>
+            <GlobalStyle />
             <div className="App">
                 <AnimatedLogo src={logo} alt="logo" />
                 <div>
@@ -32,7 +40,7 @@ function App() {
                 <div>
                     <br />
                 </div>
-                <StyledButton variant="outline">Styled Button</StyledButton>
+                <StyledButton variant="outline">Outline Button</StyledButton>
                 <div>
                     <br />
                 </div>
